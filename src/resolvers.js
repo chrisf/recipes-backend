@@ -1,11 +1,12 @@
-const users = [
-  { name: "First User", email: "first@email.com" },
-  { name: "Second User", email: "second@email.com" },
-];
+import { PrismaClient } from "@prisma/client";
+
+const prisma = new PrismaClient();
 
 const resolvers = {
   Query: {
-    users: () => users,
+    users: async () => {
+      return await prisma.user.findMany({});
+    },
   },
 };
 
