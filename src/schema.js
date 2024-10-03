@@ -24,7 +24,7 @@ const typeDefs = `#graphql
     }
 
     type Mutation {
-        newRecipe(title: String, url: String, image: String, description: String, ingredients: String, directions: String, authorId: ID) : Recipe
+        newRecipe(title: String, url: String, image: String, description: String, ingredients: String, directions: String) : Recipe
     }
 `;
 
