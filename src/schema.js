@@ -7,6 +7,7 @@ const typeDefs = `#graphql
     }
 
     type Recipe {
+        id: ID
         title: String
         url: String
         image: String
@@ -17,6 +18,7 @@ const typeDefs = `#graphql
     }
 
     type Query {
+        recipe(id: ID): Recipe
         recipes: [Recipe]
         users: [User]
     }
