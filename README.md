@@ -11,3 +11,7 @@ There is a docker-compose included, run `docker-compose up -d` to bring up the p
 `npm run dev` to run the Apollo Server
 
 There is a separate frontend project [here](https://github.com/chrisf/recipes-frontend)
+
+# Seed Data
+
+You can run `npm run seed` to load some data if you don't feel like filling out some forms
