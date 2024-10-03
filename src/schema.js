@@ -9,7 +9,10 @@ const typeDefs = `#graphql
     type Recipe {
         title: String
         url: String
-        content: String
+        image: String
+        description: String
+        ingredients: String
+        directions: String
         author: User
     }
 

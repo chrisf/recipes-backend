@@ -5,7 +5,7 @@ const prisma = new PrismaClient();
 const resolvers = {
   Query: {
     recipes: async () => {
-      return await prisma.recipe.findMany({ include: { users: true } });
+      return await prisma.recipe.findMany({ include: { author: true } });
     },
     users: async () => {
       return await prisma.user.findMany({ include: { recipes: true } });
