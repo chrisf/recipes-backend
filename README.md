@@ -6,6 +6,8 @@ I wanted to be able to actually use this for something and my wife suggested pul
 
 # Running
 
-There is a docker-compose included, run `docker-compose up -d` to bring up all dependencies for the backend.
+There is a docker-compose included, run `docker-compose up -d` to bring up the postgres db
 
-There is a separate frontend project [here](there)
+`npm run dev` to run the Apollo Server
+
+There is a separate frontend project [here](https://github.com/chrisf/recipes-frontend)
