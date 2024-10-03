@@ -22,6 +22,10 @@ const typeDefs = `#graphql
         recipes: [Recipe]
         users: [User]
     }
+
+    type Mutation {
+        newRecipe(title: String, url: String, image: String, description: String, ingredients: String, directions: String, authorId: ID) : Recipe
+    }
 `;
 
 export default typeDefs;

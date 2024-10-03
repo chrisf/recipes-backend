@@ -4,7 +4,7 @@ const prisma = new PrismaClient();
 
 const resolvers = {
   Query: {
-    recipe: async (parent, args, contextValue, info) => {
+    recipe: async (_, args, contextValue, info) => {
       const id = Number(args.id);
       return await prisma.recipe.findUnique({
         where: { id: id },
@@ -16,6 +16,23 @@ const resolvers = {
     },
     users: async () => {
       return await prisma.user.findMany({ include: { recipes: true } });
+    },
+  },
+
+  Mutation: {
+    newRecipe: async (_, recipeParams) => {
+      // todo: better error checking :)
+      return await prisma.recipe.create({
+        data: {
+          title: recipeParams.title,
+          url: recipeParams.url,
+          image: recipeParams.image,
+          description: recipeParams.description,
+          ingredients: recipeParams.ingredients,
+          directions: recipeParams.directions,
+          authorId: 1,
+        },
+      });
     },
   },
 };
